@@ -11,6 +11,7 @@ const useFirebase = () => {
     const [error, setError] = useState('')
     const [user, setUser] = useState({});
     const [isLoading, setIsLoading] = useState(true);
+    const [modalShow, setModalShow] = React.useState(false);
 
     const auth = getAuth();
 
@@ -48,7 +49,7 @@ const useFirebase = () => {
         return () => unsubscribed;
     }, []);
 
-    return { signInUsingGoogle, logOut, error, setError, user, setUser, isLoading, setIsLoading }
+    return { signInUsingGoogle, logOut, error, setError, user, setUser, isLoading, setIsLoading, modalShow, setModalShow }
 };
 
 export default useFirebase;

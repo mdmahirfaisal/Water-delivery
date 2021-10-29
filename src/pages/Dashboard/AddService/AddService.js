@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 
 const AddService = () => {
     const { register, handleSubmit, reset } = useForm();
+    // const [file, setFile] = useState(null);
     const onSubmit = data => {
         console.log(data)
         reset()

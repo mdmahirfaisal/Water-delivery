@@ -7,27 +7,31 @@ import useAuth from '../../../hooks/useAuth';
 import './Header.css';
 
 const Header = () => {
-    const { logOut, user } = useAuth();
+    const { logOut, user, setModalShow } = useAuth();
 
     return (
         <Navbar sticky collapseOnSelect expand="lg" bg="light" variant="light shadow mb-5 py-3">
             <Container>
-                <Navbar.Brand as={HashLink} to="/home">Clean Water</Navbar.Brand>
+                <Navbar.Brand as={HashLink} to="/home" className="fs-3 fw-bold text-primary me-4">Clean Water</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav " className="d-flex align-items-center">
                     <Nav className="me-auto">
-                        <Nav.Link as={Link} to="/dashboard">Dashboard</Nav.Link>
+                        {user.email ? <Link className=" text-dark fs-5 me-4 text-decoration-none" to="/dashboard" style={{ cursor: "pointer" }}>Dashboard</Link>
+                            :
+                            <Link to="/home" style={{ cursor: "pointer" }} onClick={() => setModalShow(true)} className="text-dark fs-5 me-4 text-decoration-none">Dashboard</Link>
+                        }
 
                     </Nav>
                     <Nav>
                         {user.email ?
-                            <Nav.Link onClick={logOut}>Sign out</Nav.Link>
+                            <Link onClick={logOut} to="/home" style={{ cursor: "pointer" }} className="text-dark fs-5 text-decoration-none me-3">Sign out <i className="ms-1 fas fa-sign-out-alt"></i></Link>
                             :
-                            <Nav.Link as={HashLink} to="/login">Sign in</Nav.Link>
+                            <Link to="/home" style={{ cursor: "pointer" }} onClick={() => setModalShow(true)} className="text-dark fs-5 text-decoration-none">Sign up</Link>
                         }
-                        {user.email ?
-                            <Nav.Link as={HashLink} to="/" className="text-danger fw-bold">{user.displayName || user.email}</Nav.Link>
-                            : ""}
+
+                        {
+                            user.email ? <span className="text-primary fs-5">{user.displayName || user.email}</span> : ""
+                        }
                     </Nav>
                 </Navbar.Collapse>
             </Container>

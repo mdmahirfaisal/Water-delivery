@@ -6,6 +6,7 @@ import AuthProvider from './context/AuthProvider';
 import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
 import Header from './pages/Home/Header/Header';
 import Home from './pages/Home/Home/Home';
+import PlaceOrder from './pages/Home/PlaceOrder/PlaceOrder';
 import Login from './pages/Login/Login/Login';
 import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
 import NotFound from './pages/NotFound/NotFound';
@@ -29,6 +30,10 @@ function App() {
             </Route>
             <PrivateRoute path="/dashboard">
               <Dashboard></Dashboard>
+            </PrivateRoute>
+
+            <PrivateRoute path="/placeorder/:orderId">
+              <PlaceOrder></PlaceOrder>
             </PrivateRoute>
 
 
