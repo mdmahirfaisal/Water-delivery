@@ -1,10 +1,12 @@
+
+
 const firebaseConfig = {
-    apiKey: "AIzaSyAkRk5J3EOMubvOfGVfMAKS4iBD811N3VI",
-    authDomain: "water-delivery-b84a1.firebaseapp.com",
-    projectId: "water-delivery-b84a1",
-    storageBucket: "water-delivery-b84a1.appspot.com",
-    messagingSenderId: "855743776631",
-    appId: "1:855743776631:web:cb0425b97894ffb4ba0372"
+    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+    authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+    appId: process.env.REACT_APP_FIREBASE_APP_ID,
 };
 
 export default firebaseConfig;
