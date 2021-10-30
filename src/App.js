@@ -10,6 +10,7 @@ import PlaceOrder from './pages/Home/PlaceOrder/PlaceOrder';
 import Login from './pages/Login/Login/Login';
 import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
 import NotFound from './pages/NotFound/NotFound';
+import Orders from './pages/Orders/Orders';
 
 function App() {
   return (
@@ -30,6 +31,9 @@ function App() {
             </Route>
             <PrivateRoute path="/dashboard">
               <Dashboard></Dashboard>
+            </PrivateRoute>
+            <PrivateRoute path="/order">
+              <Orders></Orders>
             </PrivateRoute>
 
             <PrivateRoute path="/placeorder/:orderId">

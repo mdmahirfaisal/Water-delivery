@@ -9,6 +9,7 @@ import './Header.css';
 const Header = () => {
     const { logOut, user, setModalShow } = useAuth();
 
+
     return (
         <Navbar sticky collapseOnSelect expand="lg" bg="light" variant="light shadow mb-5 py-3">
             <Container>
@@ -16,22 +17,26 @@ const Header = () => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav " className="d-flex align-items-center">
                     <Nav className="me-auto">
-                        {user.email ? <Link className=" text-dark fs-5 me-4 text-decoration-none" to="/dashboard" style={{ cursor: "pointer" }}>Dashboard</Link>
+                        {user.email ? <Nav.Link as={Link} className=" text-dark fs-5 me-4 text-decoration-none" to="/dashboard" style={{ cursor: "pointer" }}>Dashboard</Nav.Link>
                             :
-                            <Link to="/home" style={{ cursor: "pointer" }} onClick={() => setModalShow(true)} className="text-dark fs-5 me-4 text-decoration-none">Dashboard</Link>
+                            <Nav.Link as={Link} to="/home" style={{ cursor: "pointer" }} onClick={() => setModalShow(true)} className="text-dark fs-5 me-4 text-decoration-none">Dashboard</Nav.Link>
                         }
 
-                    </Nav>
-                    <Nav>
+                        {user.email ? <Nav.Link as={Link} className=" text-dark fs-5 me-4 text-decoration-none" to="/order" style={{ cursor: "pointer" }}>Orders</Nav.Link>
+                            :
+                            <Nav.Link as={Link} to="/home" style={{ cursor: "pointer" }} onClick={() => setModalShow(true)} className="text-dark fs-5 me-4 text-decoration-none">Orders</Nav.Link>
+                        }
+
+
                         {user.email ?
-                            <Link onClick={logOut} to="/home" style={{ cursor: "pointer" }} className="text-dark fs-5 text-decoration-none me-3">Sign out <i className="ms-1 fas fa-sign-out-alt"></i></Link>
+                            <Nav.Link as={Link} onClick={logOut} to="/home" style={{ cursor: "pointer" }} className="text-dark fs-5 text-decoration-none me-3">Sign out <i className="ms-1 fas fa-sign-out-alt"></i></Nav.Link>
                             :
-                            <Link to="/home" style={{ cursor: "pointer" }} onClick={() => setModalShow(true)} className="text-dark fs-5 text-decoration-none">Sign up</Link>
+                            <Nav.Link as={Link} to="/home" style={{ cursor: "pointer" }} onClick={() => setModalShow(true)} className="text-dark fs-5 text-decoration-none">Sign up</Nav.Link>
                         }
 
-                        {
-                            user.email ? <span className="text-primary fs-5">{user.displayName || user.email}</span> : ""
-                        }
+
+                        {user.email ? <span className="text-primary fs-5">{user.displayName || user.email}</span> : ""}
+
                     </Nav>
                 </Navbar.Collapse>
             </Container>

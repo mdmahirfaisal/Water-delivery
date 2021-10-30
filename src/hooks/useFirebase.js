@@ -49,7 +49,7 @@ const useFirebase = () => {
         return () => unsubscribed;
     }, []);
 
-    return { signInUsingGoogle, logOut, error, setError, user, setUser, isLoading, setIsLoading, modalShow, setModalShow }
+    return { signInUsingGoogle, logOut, error, setError, user, setUser, isLoading, setIsLoading, modalShow, setModalShow, }
 };
 
 export default useFirebase;

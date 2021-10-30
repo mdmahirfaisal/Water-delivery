@@ -1,0 +1,8 @@
+.footer-background{
+    background-color: #003976;
+    transition: 0.4s;
+    color: rgb(201, 201, 201);
+}
+.footer-background:hover{
+    background-color: #004e5f;
+}

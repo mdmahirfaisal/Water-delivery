@@ -6,7 +6,7 @@ import useAuth from '../../../hooks/useAuth';
 
 const Service = ({ service }) => {
     const { name, price, img, description, _id } = service;
-    const { user, setModalShow } = useAuth();
+    const { user, setModalShow, } = useAuth();
 
 
     return (
@@ -15,12 +15,12 @@ const Service = ({ service }) => {
 
             {user.email ? <Link className="text-decoration-none" to={`/placeorder/${_id}`}>
                 <Card style={{ cursor: 'pointer' }}
-                    className="border-0 h-100"
+                    className="border-0 h-100 card-background"
                 >
-                    <Card.Img variant="top" src={img} className="img-fluid p-3 service-image" />
+                    <Card.Img variant="top" src={img} className="img-fluid p-3 service-image" style={{ height: "" }} />
                     <Card.Body className="pt-0">
                         <Card.Title as="h5" className="">{name}</Card.Title>
-                        <Card.Title as="h4" className=" text-danger"><i className="fas fa-euro-sign me-1"> </i> {price}</Card.Title>
+                        <Card.Title as="h4" className=" text-danger"><i className="fas fa-dollar-sign"></i> {price}</Card.Title>
                     </Card.Body>
                 </Card>
             </Link>
@@ -32,7 +32,7 @@ const Service = ({ service }) => {
                         <Card.Img variant="top" src={img} className="img-fluid p-3 service-image" />
                         <Card.Body className="pt-0">
                             <Card.Title as="h5" className="">{name}</Card.Title>
-                            <Card.Title as="h4" className=" text-danger"><i className="fas fa-euro-sign me-1"> </i> {price}</Card.Title>
+                            <Card.Title as="h4" className=" text-danger"><i className="fas fa-dollar-sign"></i> {price}</Card.Title>
                             <p>{description}</p>
                         </Card.Body>
                     </Card>
