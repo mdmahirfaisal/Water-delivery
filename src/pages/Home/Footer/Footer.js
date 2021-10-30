@@ -25,10 +25,10 @@ const Footer = () => {
                             Follow
                         </h3>
                         <h3>
-                            <HashLink to="/home#home"><button className="btn btn-danger mx-1">facebook</button></HashLink>
-                            <HashLink to="/home#home"><button className="btn btn-danger mx-1">twitter</button></HashLink>
-                            <HashLink to="/home#home"><button className="btn btn-danger mx-1">google</button></HashLink>
-                            <HashLink to="/home#home"><button className="btn btn-danger mx-1">youtube</button></HashLink>
+                            <HashLink to="/home#home"><button className="btn btn-danger mx-1"><i className="fab fa-facebook-f"></i></button></HashLink>
+                            <HashLink to="/home#home"><button className="btn btn-danger mx-1"><i className="fab fa-twitter"></i></button></HashLink>
+                            <HashLink to="/home#home"><button className="btn btn-danger mx-1"><i className="fab fa-google"></i></button></HashLink>
+                            <HashLink to="/home#home"><button className="btn btn-danger mx-1"><i className="fab fa-youtube"></i></button></HashLink>
                         </h3>
                     </div>
 
@@ -44,7 +44,7 @@ const Footer = () => {
 
                     </div>
                 </div>
-                <div className="mt-5 py-4 ">
+                <div className="mt-3 pt-3">
                     <p className="fs-6">© Copyright 2021 All Rights is Reserved </p>
                 </div>
             </div>

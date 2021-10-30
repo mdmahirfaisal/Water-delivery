@@ -11,27 +11,28 @@ const Header = () => {
 
 
     return (
-        <Navbar sticky collapseOnSelect expand="lg" bg="light" variant="light shadow mb-5 py-3">
+        <Navbar fixed="top" sticky collapseOnSelect expand="lg" bg="light" variant="light shadow mb-5 ">
             <Container>
-                <Navbar.Brand as={HashLink} to="/home" className="fs-3 fw-bold text-primary me-4">Clean Water</Navbar.Brand>
+                <Navbar.Brand as={HashLink} to="/home" className="fs-3 fw-bold text-primary me-4"><i>Freshwater shops</i></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                <Navbar.Collapse id="responsive-navbar-nav " className="d-flex align-items-center">
+                <Navbar.Collapse id=" " className="d-flex align-items-center">
                     <Nav className="me-auto">
-                        {user.email ? <Nav.Link as={Link} className=" text-dark fs-5 me-4 text-decoration-none" to="/dashboard" style={{ cursor: "pointer" }}>Dashboard</Nav.Link>
+                        {user.email ? <Link className=" text-dark fs-5 me-4 text-decoration-none" to="/dashboard" style={{ cursor: "pointer" }}>Dashboard</Link>
                             :
-                            <Nav.Link as={Link} to="/home" style={{ cursor: "pointer" }} onClick={() => setModalShow(true)} className="text-dark fs-5 me-4 text-decoration-none">Dashboard</Nav.Link>
+                            <Link to="/home" style={{ cursor: "pointer" }} onClick={() => setModalShow(true)} className="text-dark fs-5 me-4 text-decoration-none">Dashboard</Link>
                         }
 
-                        {user.email ? <Nav.Link as={Link} className=" text-dark fs-5 me-4 text-decoration-none" to="/order" style={{ cursor: "pointer" }}>Orders</Nav.Link>
+                        {user.email ? <Link className=" text-dark fs-5 me-4 text-decoration-none" to="/order" style={{ cursor: "pointer" }}>Orders</Link>
                             :
-                            <Nav.Link as={Link} to="/home" style={{ cursor: "pointer" }} onClick={() => setModalShow(true)} className="text-dark fs-5 me-4 text-decoration-none">Orders</Nav.Link>
+                            <Link to="/home" style={{ cursor: "pointer" }} onClick={() => setModalShow(true)} className="text-dark fs-5 me-4 text-decoration-none">Orders</Link>
                         }
 
-
+                    </Nav>
+                    <Nav>
                         {user.email ?
-                            <Nav.Link as={Link} onClick={logOut} to="/home" style={{ cursor: "pointer" }} className="text-dark fs-5 text-decoration-none me-3">Sign out <i className="ms-1 fas fa-sign-out-alt"></i></Nav.Link>
+                            <Link onClick={logOut} to="/home" style={{ cursor: "pointer" }} className="text-dark fs-5 text-decoration-none me-3"><button className="btn btn-info rounded-pill">Sign out<i className="ms-1 fas fa-sign-out-alt"></i></button></Link>
                             :
-                            <Nav.Link as={Link} to="/home" style={{ cursor: "pointer" }} onClick={() => setModalShow(true)} className="text-dark fs-5 text-decoration-none">Sign up</Nav.Link>
+                            <Link to="/home" style={{ cursor: "pointer" }} onClick={() => setModalShow(true)} className="text-dark fs-5 text-decoration-none"><button className="btn btn-info rounded-pill">Sign up</button></Link>
                         }
 
 
