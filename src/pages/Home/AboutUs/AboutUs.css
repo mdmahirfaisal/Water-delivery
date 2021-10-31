@@ -1,0 +1,6 @@
+.mini-img-about{
+    transition: 0.6s;
+}
+.mini-img-about:hover{
+    box-shadow: 1px 2px 10px 2px gray;
+}

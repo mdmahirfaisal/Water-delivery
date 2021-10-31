@@ -1,0 +1,19 @@
+.banner-bg{
+    background-color: blanchedalmond;
+}
+.banner-img{
+    height: 600px;
+}
+.banner-title{
+    font-size: 50px;
+}
+
+
+@media only screen and (max-width: 700px) {
+      .banner-title{
+        font-size: 35px;
+    }
+    .banner-img{
+        height: auto;
+    }
+  }
