@@ -3,12 +3,12 @@ import './AboutUs.css';
 
 const AboutUs = () => {
     return (
-        <div>
+        <div id="about">
             <h1 className="text-secondary fw-bold py-5" >ABOUT US</h1>
             <div className="container">
                 <div className="row">
                     <div className="col-sm-12 col-md-6">
-                        <div><img src="https://i.ibb.co/S3HZkjg/photo-1613679358839-d897e8dc1437-ixid-Mnwx-Mj-A3f-DB8-MHxwa-G90by1w-YWdlf-Hx8f-GVuf-DB8f-Hx8-ixlib-r.jpg" className="img-fluid rounded" alt="About img" /></div>
+                        <div className=""><img src="https://i.ibb.co/S3HZkjg/photo-1613679358839-d897e8dc1437-ixid-Mnwx-Mj-A3f-DB8-MHxwa-G90by1w-YWdlf-Hx8f-GVuf-DB8f-Hx8-ixlib-r.jpg" className="img-fluid rounded" alt="About img" /></div>
 
                     </div>
                     <div className="col-sm-12 col-md-6">

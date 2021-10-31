@@ -1,40 +1,11 @@
 import React, { } from 'react';
 import { Card, Col, Row, Spinner } from 'react-bootstrap';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
-
-const OrderList = ({ order, userOrders, setUserOrders }) => {
-    const { name, price, orderTime, img, status, _id } = order;
+const OrderList = ({ order, }) => {
+    const { name, price, orderTime, img, status } = order;
 
     // delete order
     //  https://secure-stream-98279.herokuapp.com/order/
-    const handleDelete = (id) => {
-        const proceed = window.confirm('Are you sure, you want to delete ???')
-        if (proceed) {
-            toast.success(' Canceled order successfully', {
-                position: "top-center",
-                autoClose: 3000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                // pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-            });
-            const url = `https://secure-stream-98279.herokuapp.com/order/${_id}`;
-            fetch(url, {
-                method: 'DELETE'
-            })
-                .then(res => res.json())
-                .then(data => {
-                    if (data.deletedCount > 0) {
-                        const available = userOrders.filter(user => user._id !== id);
-                        setUserOrders(available);
-                    }
-                })
-                .catch(error => console.log(error))
-        }
-    }
 
     return (
         <div className="container ">
@@ -56,8 +27,6 @@ const OrderList = ({ order, userOrders, setUserOrders }) => {
                         </Card.Body>
                     </Col>
                     <Col md={4}>
-                        <button onClick={() => handleDelete(_id)} className="btn btn-danger rounded-pill">Delete <ToastContainer /></button>
-
                         <h5 className="bg-light py-3 mt-2 w-50 mx-auto rounded-pill text-secondary px-3">{status} <Spinner animation="border " variant="success " style={{ height: "20px", width: "20px" }} /></h5>
 
                     </Col>

@@ -6,7 +6,7 @@ import { useForm } from 'react-hook-form';
 
 const AddService = () => {
     const { register, handleSubmit, reset } = useForm();
-    // const [file, setFile] = useState(null);
+
     const onSubmit = data => {
         console.log(data)
         reset()
@@ -21,11 +21,7 @@ const AddService = () => {
             .catch(error => {
                 console.log(error);
             })
-
     };
-
-
-
     return (
         <div className="add-background mt-5 py-5 ">
             <h2 className="fw-bold text-secondary mt-5">PLEASE ADD A SERVICE</h2>

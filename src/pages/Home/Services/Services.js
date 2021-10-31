@@ -23,7 +23,7 @@ const Services = () => {
 
     }, []);
     return (
-        <>
+        <div id="service">
             <h1 className="fw-bold text-secondary py-5 bg-light">OUR SERVICES</h1>
             <div className="container">
                 {isLoading ? <Spinner style={{ height: "100px", width: "100px" }} animation="border " variant="primary fs-1" /> :
@@ -36,7 +36,7 @@ const Services = () => {
                         }
                     </div>}
             </div>
-        </>
+        </div>
     );
 };
 

@@ -12,7 +12,6 @@ const Orders = () => {
             .then(res => res.json())
             .then(data => {
                 setUserOrders(data);
-
             })
             .catch(error => console.log(error))
     }, [])
@@ -26,8 +25,6 @@ const Orders = () => {
             <div className="row">
                 {specificOrder.map(order => <OrderList
                     key={order._id}
-                    userOrders={userOrders}
-                    setUserOrders={setUserOrders}
                     order={order}
                 ></OrderList>)}
             </div>

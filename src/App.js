@@ -1,10 +1,9 @@
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
-
 import AuthProvider from './context/AuthProvider';
 import AddService from './pages/Dashboard/AddService/AddService';
-import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
+import ManageOrders from './pages/Dashboard/ManageOrders/ManageOrders';
 import Header from './pages/Home/Header/Header';
 import Home from './pages/Home/Home/Home';
 import PlaceOrder from './pages/Home/PlaceOrder/PlaceOrder';
@@ -30,8 +29,8 @@ function App() {
             <Route path="/login">
               <Login></Login>
             </Route>
-            <PrivateRoute path="/dashboard">
-              <Dashboard></Dashboard>
+            <PrivateRoute path="/manageOrders">
+              <ManageOrders></ManageOrders>
             </PrivateRoute>
 
             <PrivateRoute path="/addservice">
