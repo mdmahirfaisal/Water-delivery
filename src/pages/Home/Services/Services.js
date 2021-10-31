@@ -11,7 +11,7 @@ const Services = () => {
 
     useEffect(() => {
         setIsLoading(true);
-        fetch('http://localhost:5000/services')
+        fetch('https://secure-stream-98279.herokuapp.com/services')
             .then(res => res.json())
             .then(data => {
                 setServices(data);
