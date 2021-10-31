@@ -1,9 +1,11 @@
-import React from 'react';
+// import axios from 'axios';
+import React, { useState } from 'react';
 import { Card, Col, Row, Form } from 'react-bootstrap';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const ManageOrderInfo = ({ allOrder, setAllUserOrders, allUserOrders }) => {
+    const [orders, setOrders] = useState([]);
     const { name, price, _id, status, img, orderTime } = allOrder;
 
 
@@ -33,8 +35,45 @@ const ManageOrderInfo = ({ allOrder, setAllUserOrders, allUserOrders }) => {
                 })
                 .catch(error => console.log(error))
         }
-    }
+    };
 
+
+    // handle status change 
+    const handleStatusChange = (id, status) => {
+        let modifiedOrders = [];
+        orders.forEach(order => {
+            if (order._id === id) {
+                order.status = status;
+            }
+            modifiedOrders.push(order)
+        })
+        setOrders(modifiedOrders);
+
+        const modifiedStatus = {}
+
+        const url = `https://secure-stream-98279.herokuapp.com/order/${id}`;
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(modifiedStatus)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                toast.success('Status changed successfully')
+
+            })
+            .catch(error => toast.error(error.message));
+
+
+
+        // axios.put('https://secure-stream-98279.herokuapp.com/order', modifiedStatus)
+        //     .then(res => res.data && toast.success(`Set to ${status}`))
+        //     .catch(error => toast.error(error.message));
+        // console.log(modifiedStatus);
+    }
 
     return (
         <div>
@@ -55,11 +94,13 @@ const ManageOrderInfo = ({ allOrder, setAllUserOrders, allUserOrders }) => {
                         </Card.Body>
                     </Col>
                     <Col md={4}>
-                        <button onClick={() => handleDelete(_id)} className="btn btn-info w-75 mb-2 rounded-pill">Delete <ToastContainer /></button>
-
-                        <Form.Select aria-label="Default select example" className="w-75 mx-auto rounded-pill">
-                            <option>{status}</option>
-                            <option value="1">Approve</option>
+                        <button onClick={() => handleDelete(_id)} className="btn btn-danger w-75 mb-2 rounded-pill">Delete <ToastContainer /></button>
+                        <Form.Select
+                            className={status === "Pending" ? "btn btn-danger w-75" : status === "Approve" ? "btn btn-success w-75" : "btn btn-info w-75"}
+                            defaultValue={status}
+                            onChange={e => handleStatusChange(_id, e.target.value)}>
+                            <option className="bg-white py-1 text-muted">Pending</option>
+                            <option className="bg-white py-1 text-muted">Approve</option>
                         </Form.Select>
 
                     </Col>
