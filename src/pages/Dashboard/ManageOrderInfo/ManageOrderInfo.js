@@ -1,4 +1,4 @@
-// import axios from 'axios';
+
 import React, { useState } from 'react';
 import { Card, Col, Row, Form } from 'react-bootstrap';
 import { ToastContainer, toast } from 'react-toastify';
@@ -49,7 +49,7 @@ const ManageOrderInfo = ({ allOrder, setAllUserOrders, allUserOrders }) => {
         })
         setOrders(modifiedOrders);
 
-        const modifiedStatus = {}
+        const modifiedStatus = { id, status }
 
         const url = `https://secure-stream-98279.herokuapp.com/order/${id}`;
         fetch(url, {
@@ -67,12 +67,6 @@ const ManageOrderInfo = ({ allOrder, setAllUserOrders, allUserOrders }) => {
             })
             .catch(error => toast.error(error.message));
 
-
-
-        // axios.put('https://secure-stream-98279.herokuapp.com/order', modifiedStatus)
-        //     .then(res => res.data && toast.success(`Set to ${status}`))
-        //     .catch(error => toast.error(error.message));
-        // console.log(modifiedStatus);
     }
 
     return (
