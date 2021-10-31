@@ -1,11 +1,13 @@
 import React from 'react';
-import AddService from '../AddService/AddService';
+import { } from 'react-router-dom';
+
 
 const Dashboard = () => {
     return (
-        <div>
+        <div className="container my-5 py-5">
             <h2>This is Dashboard</h2>
-            <AddService></AddService>
+
+
         </div>
     );
 };

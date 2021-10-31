@@ -17,7 +17,7 @@ const PlaceOrder = () => {
     // load single form specific ID
 
     useEffect(() => {
-        fetch(`http://localhost:5000/services/${orderId}`)
+        fetch(`https://secure-stream-98279.herokuapp.com/services/${orderId}`)
             .then(res => res.json())
             .then(data => setServiceDetail(data))
             .catch(error => {
@@ -39,7 +39,7 @@ const PlaceOrder = () => {
 
     const handlePlaceOrder = () => {
         const newOrder = { ...userData, ...addOrder, orderTime: new Date() };
-        fetch('http://localhost:5000/order', {
+        fetch('https://secure-stream-98279.herokuapp.com/order', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(newOrder)

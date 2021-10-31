@@ -31,9 +31,9 @@ const Service = ({ service }) => {
                     >
                         <Card.Img variant="top" src={img} className="img-fluid p-3 service-image" />
                         <Card.Body className="pt-0">
-                            <Card.Title as="h5" className="">{name}</Card.Title>
-                            <Card.Title as="h4" className=" text-danger"><i className="fas fa-dollar-sign"></i> {price}</Card.Title>
-                            <p>{description}</p>
+                            <Card.Title as="h5" className="text-info">{name}</Card.Title>
+                            <Card.Title as="h4" className="text-secondary fw-bold"><i className="fas fa-dollar-sign"></i> {price}</Card.Title>
+                            <p className="text-secondary">{description}</p>
                         </Card.Body>
                     </Card>
                 </Link>

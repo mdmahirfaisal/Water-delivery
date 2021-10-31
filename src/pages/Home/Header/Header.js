@@ -17,16 +17,14 @@ const Header = () => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id=" " className="d-flex align-items-center">
                     <Nav className="me-auto">
-                        {user.email ? <Link className=" text-dark fs-5 me-4 text-decoration-none" to="/dashboard" style={{ cursor: "pointer" }}>Dashboard</Link>
-                            :
-                            <Link to="/home" style={{ cursor: "pointer" }} onClick={() => setModalShow(true)} className="text-dark fs-5 me-4 text-decoration-none">Dashboard</Link>
-                        }
+                        {user.email ? <Link className=" text-dark fs-5 me-4 text-decoration-none" to="/dashboard" style={{ cursor: "pointer" }}>Dashboard</Link> : ""}
+
+                        {user.email ? <Link className=" text-dark fs-5 me-4 text-decoration-none" to="/addservice" style={{ cursor: "pointer" }}>Add service</Link> : ""}
 
                         {user.email ? <Link className=" text-dark fs-5 me-4 text-decoration-none" to="/order" style={{ cursor: "pointer" }}>Orders</Link>
                             :
                             <Link to="/home" style={{ cursor: "pointer" }} onClick={() => setModalShow(true)} className="text-dark fs-5 me-4 text-decoration-none">Orders</Link>
                         }
-
                     </Nav>
                     <Nav>
                         {user.email ?

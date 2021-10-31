@@ -1,9 +1,5 @@
-.card-background{
-  background-color: rgba(201, 201, 201, 0.453);
-}
 .service-detail {
-    box-sizing: border-box;
-  transition: all 0.3s;
+  transition: all 0.4s;
 }
 
 .service-detail .card {
@@ -13,12 +9,8 @@
 }
 
 .service-detail .card:hover {
-  box-shadow: 0px 7px 10px rgba(0, 255, 208, 0.412);
+  box-shadow: 0px 7px 10px rgba(4, 242, 238, 0.489);
   transform: translateY(-20px);
-}
-
-.service-detail .card img {
-  transition: all 0.3s;
 }
 
 .service-detail .card:hover::before {
@@ -33,7 +25,7 @@
   display: block;
   width: 100%;
   height: 100%;
-  background: #fcf6f6;
+  background: #e7fdff;
   border-radius: 15px;
   z-index: -1;
   transition: transform 300ms ease-in-out;
@@ -41,43 +33,17 @@
   transform-origin: top;
 }
 
-.service-detail .card-body .card-title {
-  transition: all 0.3s;
-}
-
-.service-detail .card:hover .card-body .card-title {
-  margin-bottom: 3px !important;
-  margin-top: 12px !important;
-}
-
 .service-detail .card:hover .card-body > div {
   display: block;
   opacity: 1;
 }
 
-.service-detail .card .card-body > div > p {
-  margin: 0;
-  color: #ed5217;
-  font-weight: 600;
-  transition: all 0.3s;
-}
-
-.service-detail .card .card-body > div > .btn {
-  font-size: 1rem;
-  padding: 0.7rem 2rem;
-  border-radius: 50px;
-}
-
 .service-detail .card .card-body > div {
+  display: none;
   position: relative;
   z-index: 3;
   opacity: 0;
   bottom: 16px;
-  color: rgb(220, 14, 35);
-  transition: opacity 0.5s ease-in-out, display 0.6s ease-in-out;
-}
-
-.service-image{
-  border-radius: 25px;
-  /* padding: 10px; */
+  color: white;
+  transition: opacity 0.5s ease-in-out, display 0.5s ease-in-out;
 }
