@@ -1,8 +1,8 @@
 .banner-bg{
-    background-color: blanchedalmond;
+    background-color: #ffdd59;
 }
 .banner-img{
-    height: 600px;
+    max-height: 900px;
 }
 .banner-title{
     font-size: 50px;
